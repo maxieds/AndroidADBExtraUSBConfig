@@ -1,0 +1,6 @@
+# udev rule to detect android devices
+# These rules refer to http://developer.android.com/tools/device.html
+# Motorola (DROID TURBO 2) 
+# [a.k.a. the "infamous" phone that never works on Linux or Windows 10]
+SUBSYSTEM=="usb", ATTR{idVendor}=="22b8", ATTR{idProduct}=="2ea4", ENV{adb_user}="yes", ENV{adb_adbfast}="yes", MODE="0660" GROUP="plugdev", SYMLINK+="motorola-droid-turbo2-android%n"
+
